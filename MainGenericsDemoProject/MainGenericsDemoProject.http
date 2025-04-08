@@ -1,0 +1,6 @@
+@MainGenericsDemoProject_HostAddress = http://localhost:5209
+
+GET {{MainGenericsDemoProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

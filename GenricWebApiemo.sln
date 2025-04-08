@@ -5,7 +5,23 @@ VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenricWebApiemo", "GenricWebApiemo\GenricWebApiemo.csproj", "{1A317540-545D-44ED-98BF-A4C442F01A07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{9F2BFBFB-976B-48F9-87E2-41DDC93829F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsAPI", "Generics\GenericsAPI.csproj", "{9F2BFBFB-976B-48F9-87E2-41DDC93829F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainGenericsDemoProject", "MainGenericsDemoProject\MainGenericsDemoProject.csproj", "{44BED76F-9630-4B76-81ED-B2F97E5658CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsApiDtoAndAutomapper", "GenericsApiDtoAndAutomapper\GenericsApiDtoAndAutomapper.csproj", "{15542B1D-C8E7-4C1A-B293-91E4E7BB7DA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThreeTierArtictectureGenericsAPI", "ThreeTierArtictectureGenericsAPI", "{F5ADA6C4-BD1D-4C46-B247-E3453404C1E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "schoolManagementBussenesslogic", "schoolManagementBussenesslogic\schoolManagementBussenesslogic.csproj", "{C80F4C7E-C6A6-42E7-97D4-DAE3C778CEF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementDto", "SchoolMangementDto\SchoolManagementDto.csproj", "{CD4420FF-304E-43D2-A7E2-C6D93DBEAD59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementModel", "SchoolManagementModel\SchoolManagementModel.csproj", "{2DAC243A-FAC7-43C6-938A-9DC6D93049E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsSchoolManagementWebApiProject", "SchoolManagementWebApiProjectGenerics\GenericsSchoolManagementWebApiProject.csproj", "{62578A3F-862F-40D5-AA4A-DFBD68C796A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Folder", "Folder", "{FE678CE2-7813-4BD2-9D16-8D60F46868F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +37,40 @@ Global
 		{9F2BFBFB-976B-48F9-87E2-41DDC93829F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F2BFBFB-976B-48F9-87E2-41DDC93829F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F2BFBFB-976B-48F9-87E2-41DDC93829F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44BED76F-9630-4B76-81ED-B2F97E5658CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44BED76F-9630-4B76-81ED-B2F97E5658CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44BED76F-9630-4B76-81ED-B2F97E5658CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44BED76F-9630-4B76-81ED-B2F97E5658CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15542B1D-C8E7-4C1A-B293-91E4E7BB7DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15542B1D-C8E7-4C1A-B293-91E4E7BB7DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15542B1D-C8E7-4C1A-B293-91E4E7BB7DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15542B1D-C8E7-4C1A-B293-91E4E7BB7DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C80F4C7E-C6A6-42E7-97D4-DAE3C778CEF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C80F4C7E-C6A6-42E7-97D4-DAE3C778CEF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C80F4C7E-C6A6-42E7-97D4-DAE3C778CEF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C80F4C7E-C6A6-42E7-97D4-DAE3C778CEF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD4420FF-304E-43D2-A7E2-C6D93DBEAD59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD4420FF-304E-43D2-A7E2-C6D93DBEAD59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD4420FF-304E-43D2-A7E2-C6D93DBEAD59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD4420FF-304E-43D2-A7E2-C6D93DBEAD59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DAC243A-FAC7-43C6-938A-9DC6D93049E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DAC243A-FAC7-43C6-938A-9DC6D93049E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DAC243A-FAC7-43C6-938A-9DC6D93049E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DAC243A-FAC7-43C6-938A-9DC6D93049E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62578A3F-862F-40D5-AA4A-DFBD68C796A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62578A3F-862F-40D5-AA4A-DFBD68C796A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62578A3F-862F-40D5-AA4A-DFBD68C796A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62578A3F-862F-40D5-AA4A-DFBD68C796A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C80F4C7E-C6A6-42E7-97D4-DAE3C778CEF8} = {FE678CE2-7813-4BD2-9D16-8D60F46868F6}
+		{CD4420FF-304E-43D2-A7E2-C6D93DBEAD59} = {FE678CE2-7813-4BD2-9D16-8D60F46868F6}
+		{2DAC243A-FAC7-43C6-938A-9DC6D93049E9} = {FE678CE2-7813-4BD2-9D16-8D60F46868F6}
+		{62578A3F-862F-40D5-AA4A-DFBD68C796A0} = {F5ADA6C4-BD1D-4C46-B247-E3453404C1E3}
+		{FE678CE2-7813-4BD2-9D16-8D60F46868F6} = {F5ADA6C4-BD1D-4C46-B247-E3453404C1E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8230D921-3222-4591-A6D1-88DBCD961EC6}

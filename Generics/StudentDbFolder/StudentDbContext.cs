@@ -11,5 +11,6 @@ namespace Generics.StudentDbFolder
         }
 
         public DbSet<StudentModel>StudentTable { get; set; }
+        public DbSet<EmployeeModel> EmployeeTable { get; set; }
     }
 }

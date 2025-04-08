@@ -1,10 +1,10 @@
 
-using Generics.Repo;
-using Generics.Repo.GenericsInterfaceService;
-using Generics.StudentDbFolder;
+using MainGenericsDemoProject.GenericsDBContextFolder;
+using MainGenericsDemoProject.Repo;
+using MainGenericsDemoProject.Repo.ServiceFolder;
 using Microsoft.EntityFrameworkCore;
 
-namespace Generics
+namespace MainGenericsDemoProject
 {
     public class Program
     {
@@ -20,12 +20,12 @@ namespace Generics
             builder.Services.AddSwaggerGen();
 
 
-            builder.Services.AddDbContext<StudentDbContext>(res => 
+            builder.Services.AddDbContext<GenericsDbContextClass>(res => 
             {
                 res.UseSqlServer(builder.Configuration.GetConnectionString("dbcs"));
             });
 
-            builder.Services.AddScoped(typeof(IStudentService<>), typeof(StudentService<>));
+            builder.Services.AddScoped(typeof(IGenericsService<>), typeof(GenericsService<>));
 
 
             var app = builder.Build();

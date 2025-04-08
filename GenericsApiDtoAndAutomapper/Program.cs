@@ -1,10 +1,13 @@
 
-using Generics.Repo;
-using Generics.Repo.GenericsInterfaceService;
-using Generics.StudentDbFolder;
+using GenericsApiDtoAndAutomapper.DbContextFolder;
+using GenericsApiDtoAndAutomapper.DtoFolder;
+using GenericsApiDtoAndAutomapper.ModelFolder;
+using GenericsApiDtoAndAutomapper.ProfileFolder;
+using GenericsApiDtoAndAutomapper.RepoFolder;
+using GenericsApiDtoAndAutomapper.RepoFolder.ServiceFolder;
 using Microsoft.EntityFrameworkCore;
 
-namespace Generics
+namespace GenericsApiDtoAndAutomapper
 {
     public class Program
     {
@@ -20,12 +23,16 @@ namespace Generics
             builder.Services.AddSwaggerGen();
 
 
-            builder.Services.AddDbContext<StudentDbContext>(res => 
+
+            builder.Services.AddDbContext<EmployeeDbContext>(res => 
             {
                 res.UseSqlServer(builder.Configuration.GetConnectionString("dbcs"));
             });
 
-            builder.Services.AddScoped(typeof(IStudentService<>), typeof(StudentService<>));
+            builder.Services.AddAutoMapper(typeof(EmployeeMapper)); //builder.Services.AddAutoMapper(typeof(Program)); galat hai, kyunki Program class mein AutoMapper ka configuration nahi hota. 
+
+            builder.Services.AddScoped(typeof(IEmployeeService<EmployeeDto>), typeof(EmployeeService<EmployeeModel , EmployeeDto>));
+            builder.Services.AddScoped(typeof(IEmployeeService<CochingDto>), typeof(EmployeeService<CochingModel , CochingDto>));
 
 
             var app = builder.Build();

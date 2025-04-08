@@ -37,7 +37,7 @@ namespace GenricWebApiemo.Repos
         {
            var result = await _dbset.ToListAsync();
             return result;
-        }
+          }
 
         public async Task<T> GetById(int id)
         {

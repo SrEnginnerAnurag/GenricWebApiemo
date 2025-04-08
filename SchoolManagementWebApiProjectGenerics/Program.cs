@@ -1,10 +1,14 @@
 
-using Generics.Repo;
-using Generics.Repo.GenericsInterfaceService;
-using Generics.StudentDbFolder;
 using Microsoft.EntityFrameworkCore;
+using schoolManagementBussenesslogic.MapperProfileFolder;
+using schoolManagementBussenesslogic.RepoFolder;
+using schoolManagementBussenesslogic.RepoFolder.InterfaceServiceFolder;
+using SchoolManagementDto;
+using SchoolManagementModel.DbContexFolder;
+using SchoolManagementModel.MolderFolder;
+using SchoolMangementDto;
 
-namespace Generics
+namespace SchoolManagementWebApiProjectGenerics
 {
     public class Program
     {
@@ -20,12 +24,17 @@ namespace Generics
             builder.Services.AddSwaggerGen();
 
 
-            builder.Services.AddDbContext<StudentDbContext>(res => 
+            builder.Services.AddDbContext<TeacherDbContext>(res=> 
             {
                 res.UseSqlServer(builder.Configuration.GetConnectionString("dbcs"));
             });
 
-            builder.Services.AddScoped(typeof(IStudentService<>), typeof(StudentService<>));
+            builder.Services.AddAutoMapper(typeof(MapperProfileClass));
+
+            builder.Services.AddScoped(typeof(IServiceClass<TeacherDto> ), typeof(ServiceClass<TeachersModel ,TeacherDto>));
+            builder.Services.AddScoped(typeof(IServiceClass<StudentDto> ), typeof(ServiceClass<StudentModel ,StudentDto>));
+
+
 
 
             var app = builder.Build();

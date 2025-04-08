@@ -14,29 +14,61 @@ namespace Generics.Repo
             _DbSetStudent = _studentDbContext.Set<T>();
         }
 
-        public Task<T> DeleteData(int Id)
+        public async Task<T> DeleteData(int Id)
         {
-            throw new NotImplementedException();
+            var result = await _DbSetStudent.FindAsync(Id);
+            if ( result == null) 
+            {
+                throw new Exception("Your id is not found");
+            }
+            _studentDbContext.Remove(result);
+            await _studentDbContext.SaveChangesAsync();
+            return result;
         }
 
-        public Task<T> GetDataById(int id)
+        public async Task<T> GetDataById(int id)
         {
-            throw new NotImplementedException();
+           var res = await _DbSetStudent.FindAsync(id);
+            if (res == null) 
+            {
+                throw new Exception("Id is not found.");
+            }
+            await _studentDbContext.SaveChangesAsync();
+            return res;  
         }
 
-        public Task<T> InsertData(T input)
+        public async Task<T> InsertData(T input)
         {
-            throw new NotImplementedException();
+            await _DbSetStudent.AddAsync(input);
+            if (input == null)
+            {
+                throw new Exception("Data is not Inserted.");
+            }
+            await _studentDbContext.SaveChangesAsync();
+            return input; // Jab hum data insert karte hain, toh hum generally us data ko return karte hain taaki caller (for example, controller) ko yeh confirmation mil sake ki data sahi se insert ho gaya.
         }
 
-        public Task<List<T>> ShowData()
+        public async Task<List<T>> ShowData()
         {
-            throw new NotImplementedException();
+            var getitem = await _DbSetStudent.ToListAsync();
+            if (getitem == null)
+            {
+                throw new Exception("Data is the null.");
+            }
+            await _studentDbContext.SaveChangesAsync();
+            return getitem;
         }
 
-        public Task<T> UpdateData(T input)
+        public async Task<T> UpdateData(T input)
         {
-            throw new NotImplementedException();
+            _DbSetStudent.Update(input);
+            if (input == null)
+            {
+                throw new Exception("your Id is Not Found.");
+            }
+            await _studentDbContext.SaveChangesAsync();
+            return input;
+
         }
     }
 }
